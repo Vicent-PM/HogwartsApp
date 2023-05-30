@@ -10,11 +10,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MyViewModel(val context: Context) {
+class MyViewModel(val context: Context): ViewModel() {
 
     private val repository = Repository(context)
 
     val charactersLiveData = MutableLiveData<List<Characters>?>()
+    val selectedCharacter = MutableLiveData<Characters>()
 
     fun getCharacters() {
         CoroutineScope(Dispatchers.IO).launch {

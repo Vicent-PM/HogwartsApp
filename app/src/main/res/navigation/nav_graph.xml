@@ -13,7 +13,11 @@
     <fragment
         android:id="@+id/characterFragment"
         android:name="com.example.hogwarts.CharacterFragment"
-        android:label="Characters" />
+        android:label="Characters" >
+        <action
+            android:id="@+id/action_characterFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/housesFragment"
         android:name="com.example.hogwarts.HousesFragment"
@@ -22,4 +26,8 @@
         android:id="@+id/spellsFragment"
         android:name="com.example.hogwarts.SpellsFragment"
         android:label="Spells" />
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.example.hogwarts.CharacterDetailsFragment"
+        android:label="CharacterDetailsFragment" />
 </navigation>
