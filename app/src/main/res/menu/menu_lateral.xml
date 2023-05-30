@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/FirstFragment"
+        android:icon="@drawable/home"
+        android:title="Home" />
+    <item
+        android:id="@+id/characterFragment"
+        android:icon="@drawable/harry_potter"
+        android:title="Characters" />
+    <item
+        android:id="@+id/housesFragment"
+        android:icon="@drawable/if_14_harry_potter_colour_hogwarts_shield_2730327_88145"
+        android:title="Houses" />
+    <item
+        android:id="@+id/spellsFragment"
+        android:icon="@drawable/varita_magica"
+        android:title="Spells" />
+</menu>
