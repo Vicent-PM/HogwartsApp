@@ -37,22 +37,22 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-
+                R.id.characterFragment, R.id.housesFragment, R.id.spellsFragment
             ), binding.drawerlayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navigationview.setupWithNavController(navController)
 
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if(binding.drawerlayout.isDrawerOpen(GravityCompat.START)) {
-                    binding.drawerlayout.closeDrawer(GravityCompat.START)
-                } else {
-                    if(!navController.navigateUp())
-                        finish()
-                }
-            }
-        })
+//        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+//            override fun handleOnBackPressed() {
+//                if(binding.drawerlayout.isDrawerOpen(GravityCompat.START)) {
+//                    binding.drawerlayout.closeDrawer(GravityCompat.START)
+//                } else {
+//                    if(!navController.navigateUp())
+//                        finish()
+//                }
+//            }
+//        })
 
         val navigationView: NavigationView = findViewById(R.id.navigationview)
         val headerView = navigationView.getHeaderView(0)

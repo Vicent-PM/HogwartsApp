@@ -1,32 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group>
-        <item
-            android:id="@+id/home"
-            android:title="Home" />
-    </group>
-    <item android:title="Equipo">
-        <menu android:checkableBehavior="single">
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/equipo"
-                    android:title="Equipo" />
-                <item
-                    android:id="@+id/galeria"
-                    android:title="Galeria" />
-            </group>
-        </menu>
-    </item>
 
-    <item android:title="Acerca de">
-        <menu android:checkableBehavior="single">
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/contacto"
-                    android:title="Contacto" />
-            </group>
-        </menu>
-    </item>
-
+    <item
+        android:id="@+id/characterFragment"
+        android:title="Item" />
+    <item
+        android:id="@+id/housesFragment"
+        android:title="Item" />
+    <item
+        android:id="@+id/spellsFragment"
+        android:title="Item" />
 </menu>

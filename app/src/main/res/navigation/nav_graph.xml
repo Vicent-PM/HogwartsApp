@@ -10,4 +10,16 @@
         android:name="com.example.hogwarts.FirstFragment"
         android:label="Inicio"
         tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/characterFragment"
+        android:name="com.example.hogwarts.CharacterFragment"
+        android:label="CharacterFragment" />
+    <fragment
+        android:id="@+id/housesFragment"
+        android:name="com.example.hogwarts.HousesFragment"
+        android:label="HousesFragment" />
+    <fragment
+        android:id="@+id/spellsFragment"
+        android:name="com.example.hogwarts.SpellsFragment"
+        android:label="SpellsFragment" />
 </navigation>
