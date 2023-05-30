@@ -13,13 +13,13 @@
     <fragment
         android:id="@+id/characterFragment"
         android:name="com.example.hogwarts.CharacterFragment"
-        android:label="CharacterFragment" />
+        android:label="Characters" />
     <fragment
         android:id="@+id/housesFragment"
         android:name="com.example.hogwarts.HousesFragment"
-        android:label="HousesFragment" />
+        android:label="Houses" />
     <fragment
         android:id="@+id/spellsFragment"
         android:name="com.example.hogwarts.SpellsFragment"
-        android:label="SpellsFragment" />
+        android:label="Spells" />
 </navigation>

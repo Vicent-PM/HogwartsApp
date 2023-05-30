@@ -5,7 +5,7 @@
     android:id="@+id/header_menu"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FF0000">
+    android:background="@drawable/fondo_pergamino">
 
     <ImageView
         android:id="@+id/image_galeria"
@@ -19,28 +19,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hd_wallpaper_hogwarts_legacy_harry_harry_potter_potter" />
+        app:srcCompat="@drawable/escudi_harry" />
 
     <TextView
         android:id="@+id/usuario_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:fontFamily="@font/harryp"
+        android:shadowColor="#000000"
+        android:shadowDx="0"
+        android:shadowRadius="8"
         android:text="TextView"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/image_galeria"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image_galeria"
         app:layout_constraintTop_toTopOf="@+id/image_galeria" />
 
-    <TextView
-        android:id="@+id/date_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/image_galeria"
-        app:layout_constraintStart_toEndOf="@+id/image_galeria" />
 </androidx.constraintlayout.widget.ConstraintLayout>
