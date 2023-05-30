@@ -71,7 +71,21 @@ class MainActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        return super.onOptionsItemSelected(item)
+        when (item.itemId) {
+            R.id.action_exit -> {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Close App")
+                builder.setMessage("Are you sure you want to close the app?")
+                builder.setPositiveButton("Yes") { _, _ ->
+                    finish()
+                }
+                builder.setNegativeButton("No", null)
+                val dialog = builder.create()
+                dialog.show()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
