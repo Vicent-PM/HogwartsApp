@@ -1,6 +1,5 @@
 package com.example.hogwarts.ui.fragments
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -33,7 +32,6 @@ class CharacterDetailsFragment: Fragment() {
 
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -50,7 +48,7 @@ class CharacterDetailsFragment: Fragment() {
             Glide.with(this).load(it.image).into(binding.tvImagenPersonaje)
             binding.tvSpecies.text = it.species
             when(it.gender){
-                "male" -> binding.ivGender.setImageResource(R.drawable.masculino)
+                "male" -> binding.ivGender.setImageResource(R.drawable.genero_masculino)
                 "female" -> binding.ivGender.setImageResource(R.drawable.femenino)
             }
             binding.tvHouse.text = it.house
