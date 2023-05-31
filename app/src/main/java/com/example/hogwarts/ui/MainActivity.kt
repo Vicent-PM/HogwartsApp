@@ -1,5 +1,6 @@
 package com.example.hogwarts.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -17,6 +18,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.hogwarts.R
 import com.example.hogwarts.databinding.ActivityMainBinding
+import com.example.hogwarts.databinding.FragmentFirstBinding
 import com.google.android.material.navigation.NavigationView
 
 
@@ -25,6 +27,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    private lateinit var headerTextView: TextView
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, true)
@@ -53,13 +58,15 @@ class MainActivity : AppCompatActivity() {
                         finish()
                 }
             }
+
         })
 
         val navigationView: NavigationView = findViewById(R.id.navigationview)
         val headerView = navigationView.getHeaderView(0)
-        val usuario_header = headerView.findViewById<TextView>(R.id.usuario_header)
+        headerTextView = headerView.findViewById(R.id.usuario_header)
 
-        usuario_header.text = "Pure Blood"
+        headerTextView.text = "Pure Blood"
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

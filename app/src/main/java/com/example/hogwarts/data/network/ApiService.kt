@@ -15,4 +15,6 @@ interface ApiService {
 
     @GET("characters")
     suspend fun getHouseCharacter(@Path("house") house: String): Response<List<Characters>>
+
+
 }
