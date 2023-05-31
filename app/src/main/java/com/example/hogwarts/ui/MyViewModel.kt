@@ -18,6 +18,7 @@ class MyViewModel(val context: Context): ViewModel() {
     val charactersLiveData = MutableLiveData<List<Characters>?>()
     val selectedCharacter = MutableLiveData<Characters>()
     val spellsLiveData = MutableLiveData<List<Spells>?>()
+    val houseCharactersLiveData = MutableLiveData<List<Characters>?>()
 
     fun getCharacters() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -35,6 +36,16 @@ class MyViewModel(val context: Context): ViewModel() {
             if(response.isSuccessful) {
                 val spellsList = response.body()
                 spellsLiveData.postValue(spellsList)
+            }
+        }
+    }
+
+    fun getHouseCharacters() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = repository.getHouseCharacters("Ravenclaw")
+            if(response.isSuccessful) {
+                val response = response.body()
+                houseCharactersLiveData.postValue(response)
             }
         }
     }
