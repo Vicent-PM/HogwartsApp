@@ -51,7 +51,7 @@ class HousesFragment: Fragment() {
         val listAdapter = charactersAdapter(object : charactersAdapter.OnItemClickListener{
             override fun onItemClick(character: Characters) {
                 myViewModel.selectedCharacter.value = character
-                findNavController().navigate(R.id.action_characterFragment_to_characterDetailsFragment)
+                findNavController().navigate(R.id.action_housesFragment_to_characterDetailsFragment)
             }
         })
 
@@ -65,7 +65,7 @@ class HousesFragment: Fragment() {
             listAdapter.update(it)
         }
 
-        myViewModel.getCharacters()
+        myViewModel.getSlytherinCharacters()
 
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(object : MenuProvider {

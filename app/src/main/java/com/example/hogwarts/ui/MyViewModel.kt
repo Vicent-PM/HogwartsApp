@@ -40,7 +40,17 @@ class MyViewModel(val context: Context): ViewModel() {
         }
     }
 
-    fun getHouseCharacters() {
+    fun getGryffindorCharacters() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = repository.getHouseCharacters("Gryffindor")
+            if(response.isSuccessful) {
+                val response = response.body()
+                houseCharactersLiveData.postValue(response)
+            }
+        }
+    }
+
+    fun getRavenclawCharacters() {
         CoroutineScope(Dispatchers.IO).launch {
             val response = repository.getHouseCharacters("Ravenclaw")
             if(response.isSuccessful) {
@@ -49,6 +59,27 @@ class MyViewModel(val context: Context): ViewModel() {
             }
         }
     }
+
+    fun getHufflepuffCharacters() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = repository.getHouseCharacters("Hufflepuff")
+            if(response.isSuccessful) {
+                val response = response.body()
+                houseCharactersLiveData.postValue(response)
+            }
+        }
+    }
+
+    fun getSlytherinCharacters() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = repository.getHouseCharacters("Slytherin")
+            if(response.isSuccessful) {
+                val response = response.body()
+                houseCharactersLiveData.postValue(response)
+            }
+        }
+    }
+
 
 
 
