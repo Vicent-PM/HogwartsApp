@@ -49,46 +49,6 @@ class CharacterFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val menuHost: MenuHost = requireActivity()
-        menuHost.addMenuProvider(object : MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                menuInflater.inflate(R.menu.menu_buscar, menu)
-
-                val menuItem = menu.findItem(R.id.app_bar_search)
-                val searchView = menuItem.actionView as SearchView
-
-                searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
-                    override fun onQueryTextSubmit(p0: String?): Boolean {
-                        adapter.filter.filter(p0)
-                        return true
-                    }
-
-                    override fun onQueryTextChange(p0: String?): Boolean {
-                        adapter.filter.filter(p0)
-                        return true
-                    }
-                })
-            }
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                return when (menuItem.itemId) {
-                    R.id.action_exit -> {
-                        val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("Close App")
-                        builder.setMessage("Are you sure you want to close the app?")
-                        builder.setPositiveButton("Yes") { _, _ ->
-                            requireActivity().finishAffinity()
-                        }
-                        builder.setNegativeButton("No", null)
-                        val dialog = builder.create()
-                        dialog.show()
-                        return true
-                    }
-
-                    else -> false
-                }
-            }
-        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
-
         with(binding) {
             val adapter = characterViewPagerAdapter(this@CharacterFragment)
             viewpager.adapter = adapter

@@ -65,7 +65,7 @@ class HousesFragment: Fragment() {
             listAdapter.update(it)
         }
 
-        myViewModel.getSlytherinCharacters()
+        myViewModel.getCharacters()
 
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(object : MenuProvider {
