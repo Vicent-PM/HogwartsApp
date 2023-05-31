@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/idNombrePersonaje"
+        android:id="@+id/tv_Name"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:background="#432A2A"
@@ -20,13 +20,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/idImagenPersonaje"
+        android:id="@+id/tv_ImagenPersonaje"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idNombrePersonaje"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Name"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <androidx.core.widget.NestedScrollView
@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idImagenPersonaje">
+        app:layout_constraintTop_toBottomOf="@+id/tv_ImagenPersonaje">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -58,15 +58,13 @@
                 <TableLayout
                     android:id="@+id/tableLayout2"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/guideline2"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0">
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <TableRow
                         android:layout_width="match_parent"
@@ -251,6 +249,7 @@
                             android:padding="10dp"
                             android:text="Actor	" />
                     </TableRow>
+
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -266,21 +265,19 @@
 
                 <TableLayout
                     android:id="@+id/tableLayout"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginTop="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/tableLayout2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0">
+                    app:layout_constraintTop_toTopOf="@+id/tableLayout2">
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView13"
+                            android:id="@+id/tv_AlternateName"
                             android:layout_width="185dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/harryfont"
@@ -295,13 +292,13 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView14"
+                            android:id="@+id/tv_Species"
                             android:layout_width="185dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/harryfont"
                             android:gravity="center"
                             android:padding="10dp"
-                            android:text="TextAliveiew"
+                            android:text="TextView"
                             android:textSize="20sp" />
                     </TableRow>
 
@@ -310,7 +307,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageView4"
+                            android:id="@+id/iv_Gender"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             app:srcCompat="@drawable/ic_launcher_background" />
@@ -322,7 +319,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView15"
+                            android:id="@+id/tv_House"
                             android:layout_width="185dp"
                             android:layout_height="match_parent"
                             android:fontFamily="@font/harryfont"
@@ -338,14 +335,14 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView21"
-                            android:fontFamily="@font/harryfont"
+                            android:id="@+id/tv_DateBirth"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/harryfont"
                             android:gravity="center"
                             android:padding="10dp"
                             android:text="TextView"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </TableRow>
 
                     <TableRow
@@ -353,14 +350,14 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView22"
-                            android:fontFamily="@font/harryfont"
+                            android:id="@+id/tv_YearBirth"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/harryfont"
                             android:gravity="center"
                             android:padding="10dp"
                             android:text="TextView"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </TableRow>
 
                     <TableRow
@@ -368,14 +365,14 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView23"
-                            android:fontFamily="@font/harryfont"
+                            android:id="@+id/tv_Wizard"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/harryfont"
                             android:gravity="center"
                             android:padding="10dp"
                             android:text="TextView"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </TableRow>
 
                     <TableRow
@@ -383,14 +380,14 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView24"
-                            android:fontFamily="@font/harryfont"
+                            android:id="@+id/tv_Ancestry"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/harryfont"
                             android:gravity="center"
                             android:padding="10dp"
                             android:text="TextView"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </TableRow>
 
                     <TableRow
@@ -398,14 +395,14 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView25"
-                            android:fontFamily="@font/harryfont"
+                            android:id="@+id/tv_EyeColour"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/harryfont"
                             android:gravity="center"
                             android:padding="10dp"
                             android:text="TextView"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </TableRow>
 
                     <TableRow
@@ -413,14 +410,14 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView26"
-                            android:fontFamily="@font/harryfont"
+                            android:id="@+id/tv_HairColour"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/harryfont"
                             android:gravity="center"
                             android:padding="10dp"
                             android:text="TextView"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </TableRow>
 
                     <TableRow
@@ -428,14 +425,14 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView27"
-                            android:fontFamily="@font/harryfont"
+                            android:id="@+id/tv_Wand"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/harryfont"
                             android:gravity="center"
                             android:padding="10dp"
                             android:text="TextView"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </TableRow>
 
                     <TableRow
@@ -443,14 +440,14 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView28"
-                            android:fontFamily="@font/harryfont"
+                            android:id="@+id/tv_Patronus"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/harryfont"
                             android:gravity="center"
                             android:padding="10dp"
                             android:text="TextView"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </TableRow>
 
                     <TableRow
@@ -458,7 +455,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageView5"
+                            android:id="@+id/iv_Stundent"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             app:srcCompat="@drawable/ic_launcher_background" />
@@ -470,7 +467,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageView6"
+                            android:id="@+id/iv_Staff"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             app:srcCompat="@drawable/ic_launcher_background" />
@@ -481,14 +478,14 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView31"
-                            android:fontFamily="@font/harryfont"
+                            android:id="@+id/tv_Actor"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/harryfont"
                             android:gravity="center"
                             android:padding="10dp"
                             android:text="TextView"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </TableRow>
 
                     <TableRow
@@ -496,7 +493,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageView7"
+                            android:id="@+id/iv_Alive"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             app:srcCompat="@drawable/ic_launcher_background" />

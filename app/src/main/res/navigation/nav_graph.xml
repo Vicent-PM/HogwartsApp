@@ -7,19 +7,27 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.hogwarts.FirstFragment"
+        android:name="com.example.hogwarts.ui.fragments.FirstFragment"
         android:label="Inicio"
         tools:layout="@layout/fragment_first" />
     <fragment
         android:id="@+id/characterFragment"
-        android:name="com.example.hogwarts.CharacterFragment"
-        android:label="Characters" />
+        android:name="com.example.hogwarts.ui.fragments.CharacterFragment"
+        android:label="Characters" >
+        <action
+            android:id="@+id/action_characterFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/housesFragment"
-        android:name="com.example.hogwarts.HousesFragment"
+        android:name="com.example.hogwarts.ui.fragments.HousesFragment"
         android:label="Houses" />
     <fragment
         android:id="@+id/spellsFragment"
-        android:name="com.example.hogwarts.SpellsFragment"
+        android:name="com.example.hogwarts.ui.fragments.SpellsFragment"
         android:label="Spells" />
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.example.hogwarts.ui.fragments.CharacterDetailsFragment"
+        android:label="CharacterDetailsFragment" />
 </navigation>
