@@ -19,6 +19,8 @@ class MyViewModel(val context: Context): ViewModel() {
     val selectedCharacter = MutableLiveData<Characters>()
     val spellsLiveData = MutableLiveData<List<Spells>?>()
     val houseCharactersLiveData = MutableLiveData<List<Characters>?>()
+    val staffCharactersLiveData = MutableLiveData<List<Characters>?>()
+    val studentsCharactersLiveData = MutableLiveData<List<Characters>?>()
 
     fun getCharacters() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -80,7 +82,25 @@ class MyViewModel(val context: Context): ViewModel() {
         }
     }
 
+    fun getStaffCharacters() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = repository.getStaffCharacters()
+            if(response.isSuccessful) {
+                val charactersList = response.body()
+                staffCharactersLiveData.postValue(charactersList)
+            }
+        }
+    }
 
+    fun getSudentsCharacters() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = repository.getStudentsCharacters()
+            if(response.isSuccessful) {
+                val charactersList = response.body()
+                studentsCharactersLiveData.postValue(charactersList)
+            }
+        }
+    }
 
 
     class MyViewModelFactory(private val context: Context) : ViewModelProvider.Factory {

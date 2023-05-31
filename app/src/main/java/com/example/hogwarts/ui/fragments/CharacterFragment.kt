@@ -18,10 +18,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.hogwarts.R
+import com.example.hogwarts.data.adapters.characterViewPagerAdapter
 import com.example.hogwarts.data.adapters.charactersAdapter
 import com.example.hogwarts.data.models.getCharacters.Characters
 import com.example.hogwarts.databinding.FragmentCharacterBinding
 import com.example.hogwarts.ui.MyViewModel
+import com.google.android.material.tabs.TabLayoutMediator
 
 class CharacterFragment: Fragment() {
     private var _binding: FragmentCharacterBinding? = null
@@ -46,25 +48,6 @@ class CharacterFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val listAdapter = charactersAdapter(object : charactersAdapter.OnItemClickListener{
-            override fun onItemClick(character: Characters) {
-                myViewModel.selectedCharacter.value = character
-                findNavController().navigate(R.id.action_characterFragment_to_characterDetailsFragment)
-            }
-        })
-
-        val recyclerView = binding.recyclerview
-        adapter = listAdapter
-        val layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = adapter
-
-        myViewModel.charactersLiveData.observe(viewLifecycleOwner) {
-            listAdapter.update(it)
-        }
-
-        myViewModel.getCharacters()
 
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(object : MenuProvider {
@@ -105,6 +88,15 @@ class CharacterFragment: Fragment() {
                 }
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
+        with(binding) {
+            val adapter = characterViewPagerAdapter(this@CharacterFragment)
+            viewpager.adapter = adapter
+
+            TabLayoutMediator(tabLayout2, viewpager) { tab, position ->
+                tab.text = if(position == 0) "All" else if (position == 1) "Staff" else "Students"
+            }.attach()
+        }
     }
 
     override fun onDestroyView() {
