@@ -35,10 +35,12 @@ class charactersAdapter(private val listener: OnItemClickListener): RecyclerView
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val character: Characters = characterListCopy[position]
-        holder.binding.tvCharaName.text = character.name
-        Glide.with(holder.itemView).load(character.image)
-            .override(Target.SIZE_ORIGINAL)
-            .into(holder.binding.imageView)
+        if(character.image != ""){
+            Glide.with(holder.itemView).load(character.image)
+                .override(Target.SIZE_ORIGINAL)
+                .into(holder.binding.imageView)
+            holder.binding.tvCharaName.text = character.name
+        }
 
 
 
