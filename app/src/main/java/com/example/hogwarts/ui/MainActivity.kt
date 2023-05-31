@@ -1,4 +1,4 @@
-package com.example.hogwarts
+package com.example.hogwarts.ui
 
 import android.os.Bundle
 import android.view.Menu
@@ -15,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.hogwarts.R
 import com.example.hogwarts.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 
