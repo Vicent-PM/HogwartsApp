@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.hogwarts.MainActivity">
+    tools:context="com.example.hogwarts.ui.MainActivity">
     <item
         android:id="@+id/action_exit"
         android:icon="@drawable/baseline_exit_to_app_24"

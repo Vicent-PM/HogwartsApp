@@ -6,4 +6,5 @@ class Repository(val context: Context) {
 
     private val retrofit = RetrofitHelper.getRetrofit()
     suspend fun getCharacters() = retrofit.getCharacters()
+    suspend fun getSpells() = retrofit.getSpells()
 }

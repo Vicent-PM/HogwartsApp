@@ -1,4 +1,4 @@
-package com.example.hogwarts
+package com.example.hogwarts.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
