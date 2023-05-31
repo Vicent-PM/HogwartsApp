@@ -18,11 +18,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.hogwarts.R
+import com.example.hogwarts.data.adapters.characterViewPagerAdapter
 import com.example.hogwarts.data.adapters.charactersAdapter
 import com.example.hogwarts.data.models.getCharacters.Characters
 import com.example.hogwarts.databinding.FragmentFirstBinding
 import com.example.hogwarts.databinding.FragmentHousesBinding
 import com.example.hogwarts.ui.MyViewModel
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HousesFragment: Fragment() {
     private var _binding: FragmentHousesBinding? = null
@@ -54,6 +56,16 @@ class HousesFragment: Fragment() {
                 findNavController().navigate(R.id.action_housesFragment_to_characterDetailsFragment)
             }
         })
+
+        TabLayoutMediator(tabLayout, recyclerView) { tab, position ->
+            tab.text = when (position) {
+                0 -> "Gryffindor"
+                1 -> "Hufflepuff"
+                2 -> "Ravenclaw"
+                3 -> "Slytherin" //
+                else -> ""
+            }
+        }.attach()
 
         val recyclerView = binding.recyclerView
         adapter = listAdapter
