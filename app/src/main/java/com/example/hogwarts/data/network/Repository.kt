@@ -9,4 +9,6 @@ class Repository(val context: Context) {
     suspend fun getCharacters() = retrofit.getCharacters()
     suspend fun getSpells() = retrofit.getSpells()
     suspend fun getHouseCharacters(house: String) = retrofit.getHouseCharacter(house)
+    suspend fun getStaffCharacters() = retrofit.getStaffCharacters()
+    suspend fun getStudentsCharacters() = retrofit.getStudentsCharacters()
 }

@@ -15,4 +15,10 @@ interface ApiService {
 
     @GET("characters/house/{house}")
     suspend fun getHouseCharacter(@Path("house") house: String): Response<List<Characters>>
+
+    @GET("characters/students")
+    suspend fun getStudentsCharacters(): Response<List<Characters>>
+
+    @GET("characters/staff")
+    suspend fun getStaffCharacters(): Response<List<Characters>>
 }
