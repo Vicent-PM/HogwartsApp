@@ -55,7 +55,7 @@ class HousesFragment: Fragment() {
             }
         })
 
-        val recyclerView = binding.recyclerview
+        val recyclerView = binding.recyclerView
         adapter = listAdapter
         val layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
         recyclerView.layoutManager = layoutManager
