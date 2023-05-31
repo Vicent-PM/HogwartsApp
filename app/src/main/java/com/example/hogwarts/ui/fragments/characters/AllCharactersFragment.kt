@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.hogwarts.R
@@ -58,7 +59,7 @@ class AllCharactersFragment: Fragment() {
 
         val recyclerView = binding.recyclerview
         adapter = listAdapter
-        val layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
+        val layoutManager = GridLayoutManager(requireContext(),2, RecyclerView.VERTICAL, false)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 
