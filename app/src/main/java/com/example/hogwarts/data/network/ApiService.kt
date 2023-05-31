@@ -13,6 +13,6 @@ interface ApiService {
     @GET("spells")
     suspend fun getSpells(): Response<List<Spells>>
 
-    @GET("characters")
+    @GET("characters/house/{house}")
     suspend fun getHouseCharacter(@Path("house") house: String): Response<List<Characters>>
 }

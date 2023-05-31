@@ -21,7 +21,11 @@
     <fragment
         android:id="@+id/housesFragment"
         android:name="com.example.hogwarts.ui.fragments.HousesFragment"
-        android:label="Houses" />
+        android:label="Houses" >
+        <action
+            android:id="@+id/action_housesFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/spellsFragment"
         android:name="com.example.hogwarts.ui.fragments.SpellsFragment"
