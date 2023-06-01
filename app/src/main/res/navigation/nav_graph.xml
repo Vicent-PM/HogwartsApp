@@ -9,7 +9,11 @@
         android:id="@+id/FirstFragment"
         android:name="com.example.hogwarts.ui.fragments.FirstFragment"
         android:label="Inicio"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_FirstFragment_to_secretoFragment"
+            app:destination="@id/secretoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/characterFragment"
         android:name="com.example.hogwarts.ui.fragments.CharacterFragment"
@@ -34,4 +38,16 @@
         android:id="@+id/characterDetailsFragment"
         android:name="com.example.hogwarts.ui.fragments.CharacterDetailsFragment"
         android:label="CharacterDetailsFragment" />
+    <fragment
+        android:id="@+id/secretoFragment"
+        android:name="com.example.hogwarts.ui.fragments.easterEgg.SecretoFragment"
+        android:label="SecretoFragment" >
+        <action
+            android:id="@+id/action_secretoFragment_to_pregunta1Fragment"
+            app:destination="@id/pregunta1Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pregunta1Fragment"
+        android:name="Pregunta1Fragment"
+        android:label="Pregunta1Fragment" />
 </navigation>
