@@ -27,7 +27,7 @@ class MyViewModel(val context: Context): ViewModel() {
             val response = repository.getCharacters()
             if(response.isSuccessful) {
                 val charactersList = response.body()
-                charactersLiveData.postValue(charactersList)
+                charactersLiveData.postValue(charactersList?.take(25))
             }
         }
     }
@@ -87,7 +87,7 @@ class MyViewModel(val context: Context): ViewModel() {
             val response = repository.getStaffCharacters()
             if(response.isSuccessful) {
                 val charactersList = response.body()
-                staffCharactersLiveData.postValue(charactersList)
+                staffCharactersLiveData.postValue(charactersList?.take(8))
             }
         }
     }
@@ -97,7 +97,7 @@ class MyViewModel(val context: Context): ViewModel() {
             val response = repository.getStudentsCharacters()
             if(response.isSuccessful) {
                 val charactersList = response.body()
-                studentsCharactersLiveData.postValue(charactersList)
+                studentsCharactersLiveData.postValue(charactersList?.take(11))
             }
         }
     }

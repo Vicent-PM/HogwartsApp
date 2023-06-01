@@ -37,6 +37,7 @@ class CharacterDetailsFragment: Fragment() {
 
         myViewModel.selectedCharacter.observe(viewLifecycleOwner) {
             binding.tvName.text = it.name
+            binding.tvAlternateNames.text = it.alternateNames?.joinToString(", ")
             if(it.hogwartsStudent == true) {
                 (requireActivity() as MainActivity).supportActionBar?.title = "Student"
             } else if (it.hogwartsStaff == true) {
