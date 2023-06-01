@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
@@ -30,6 +31,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var headerTextView: TextView
+    private lateinit var headerImage: ImageView
+    private var contador = 0
 
 
 
@@ -66,8 +69,19 @@ class MainActivity : AppCompatActivity() {
         val navigationView: NavigationView = findViewById(R.id.navigationview)
         val headerView = navigationView.getHeaderView(0)
         headerTextView = headerView.findViewById(R.id.usuario_header)
+        headerImage = headerView.findViewById(R.id.image_galeria)
 
-        headerTextView.text = "Pure Blood"
+        headerTextView.text = "Half-Blood"
+
+        if (contador <= 10) {
+            headerImage.setOnClickListener {
+                contador++
+                if(contador == 10){
+                    headerTextView.text = "Pure Blood"
+                    Toast.makeText(this, "Congratulations you have promoted to pure blood", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
 
     }
 
