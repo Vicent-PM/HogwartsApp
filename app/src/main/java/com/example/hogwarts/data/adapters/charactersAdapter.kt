@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.Target
 import com.example.hogwarts.data.models.getCharacters.Characters
 import com.example.hogwarts.databinding.HolderCharactersBinding
-import com.squareup.picasso.Picasso
 
 class charactersAdapter(private val listener: OnItemClickListener): RecyclerView.Adapter<charactersAdapter.Holder>(), Filterable {
 

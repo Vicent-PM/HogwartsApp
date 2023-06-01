@@ -76,9 +76,10 @@ class MainActivity : AppCompatActivity() {
         if (contador <= 10) {
             headerImage.setOnClickListener {
                 contador++
+
                 if(contador == 10){
                     headerTextView.text = "Pure Blood"
-                    Toast.makeText(this, "Congratulations you have promoted to pure blood", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Congratulations you have promoted to pure blood!!", Toast.LENGTH_SHORT).show()
                 }
             }
         }
