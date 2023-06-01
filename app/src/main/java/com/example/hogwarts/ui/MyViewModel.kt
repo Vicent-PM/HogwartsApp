@@ -18,9 +18,12 @@ class MyViewModel(val context: Context): ViewModel() {
     val charactersLiveData = MutableLiveData<List<Characters>?>()
     val selectedCharacter = MutableLiveData<Characters>()
     val spellsLiveData = MutableLiveData<List<Spells>?>()
-    val houseCharactersLiveData = MutableLiveData<List<Characters>?>()
     val staffCharactersLiveData = MutableLiveData<List<Characters>?>()
     val studentsCharactersLiveData = MutableLiveData<List<Characters>?>()
+    val gryffindorLiveData = MutableLiveData<List<Characters>?>()
+    val slytherinLiveData = MutableLiveData<List<Characters>?>()
+    val ravenclawLiveData = MutableLiveData<List<Characters>?>()
+    val hufflepuffLiveData = MutableLiveData<List<Characters>?>()
 
     fun getCharacters() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -47,7 +50,7 @@ class MyViewModel(val context: Context): ViewModel() {
             val response = repository.getHouseCharacters("Gryffindor")
             if(response.isSuccessful) {
                 val response = response.body()
-                houseCharactersLiveData.postValue(response)
+                gryffindorLiveData.postValue(response?.take(10))
             }
         }
     }
@@ -57,7 +60,7 @@ class MyViewModel(val context: Context): ViewModel() {
             val response = repository.getHouseCharacters("Ravenclaw")
             if(response.isSuccessful) {
                 val response = response.body()
-                houseCharactersLiveData.postValue(response)
+                ravenclawLiveData.postValue(response?.take(2))
             }
         }
     }
@@ -67,7 +70,7 @@ class MyViewModel(val context: Context): ViewModel() {
             val response = repository.getHouseCharacters("Hufflepuff")
             if(response.isSuccessful) {
                 val response = response.body()
-                houseCharactersLiveData.postValue(response)
+                hufflepuffLiveData.postValue(response?.take(1))
             }
         }
     }
@@ -77,7 +80,7 @@ class MyViewModel(val context: Context): ViewModel() {
             val response = repository.getHouseCharacters("Slytherin")
             if(response.isSuccessful) {
                 val response = response.body()
-                houseCharactersLiveData.postValue(response)
+                slytherinLiveData.postValue(response?.take(9))
             }
         }
     }

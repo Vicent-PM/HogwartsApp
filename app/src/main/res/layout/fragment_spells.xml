@@ -9,7 +9,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fondo_textura_papel_pergamino_antiguo_fondo_pantalla_vintage_118047_11536"
+        android:background="@drawable/fondo_pergamino"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

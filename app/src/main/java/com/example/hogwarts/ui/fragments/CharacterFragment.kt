@@ -55,6 +55,7 @@ class CharacterFragment: Fragment() {
 
             TabLayoutMediator(tabLayout2, viewpager) { tab, position ->
                 tab.text = if(position == 0) "All" else if (position == 1) "Staff" else "Students"
+                tab.setIcon(if(position == 0) R.drawable.harry_potter else if (position == 1) R.drawable.home else R.drawable.perno_de_luz)
             }.attach()
         }
     }

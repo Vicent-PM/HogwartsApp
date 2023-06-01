@@ -24,6 +24,7 @@
         android:id="@+id/cardView"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/fondo_textura_papel_pergamino_antiguo_fondo_pantalla_vintage_118047_11536"
         app:cardCornerRadius="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,13 +32,18 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo_textura_papel_pergamino_antiguo_fondo_pantalla_vintage_118047_11536">
 
             <TextView
                 android:id="@+id/nameSpells"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/harryp"
                 android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/divider2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/divider"
@@ -47,8 +53,12 @@
                 android:id="@+id/DescriptionSpells"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/harryp"
                 android:gravity="center|center_horizontal"
                 android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/divider"
@@ -69,6 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Description"
+                android:textColor="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/divider"
                 app:layout_constraintStart_toStartOf="parent"
@@ -79,6 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Spell"
+                android:textColor="#000000"
                 app:layout_constraintBottom_toTopOf="@+id/divider2"
                 app:layout_constraintEnd_toStartOf="@+id/divider"
                 app:layout_constraintStart_toStartOf="parent"
