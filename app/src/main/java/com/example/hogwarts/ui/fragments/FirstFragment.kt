@@ -24,9 +24,6 @@ class FirstFragment : Fragment() {
     private var soundPlayed = false
 
 
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -43,6 +40,9 @@ class FirstFragment : Fragment() {
                 reproSonido()
                 soundPlayed = true
                 mostrarToastConMensajePredefinido()
+
+                val navController = findNavController()
+                navController.navigate(R.id.action_FirstFragment_to_secretoFragment)
             }
         }
 

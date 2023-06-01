@@ -57,16 +57,6 @@ class HousesFragment: Fragment() {
             }
         })
 
-        TabLayoutMediator(tabLayout, recyclerView) { tab, position ->
-            tab.text = when (position) {
-                0 -> "Gryffindor"
-                1 -> "Hufflepuff"
-                2 -> "Ravenclaw"
-                3 -> "Slytherin" //
-                else -> ""
-            }
-        }.attach()
-
         val recyclerView = binding.recyclerView
         adapter = listAdapter
         val layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
