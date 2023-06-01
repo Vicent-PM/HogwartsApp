@@ -7,8 +7,10 @@ import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.Target
 import com.example.hogwarts.data.models.getCharacters.Characters
 import com.example.hogwarts.databinding.HolderCharactersBinding
+import com.squareup.picasso.Picasso
 
 class charactersAdapter(private val listener: OnItemClickListener): RecyclerView.Adapter<charactersAdapter.Holder>(), Filterable {
 
@@ -33,8 +35,14 @@ class charactersAdapter(private val listener: OnItemClickListener): RecyclerView
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val character: Characters = characterListCopy[position]
-        holder.binding.tvCharaName.text = character.name
-        Glide.with(holder.itemView).load(character.image).into(holder.binding.imageView)
+        if(character.image != ""){
+            Glide.with(holder.itemView).load(character.image)
+                .override(Target.SIZE_ORIGINAL)
+                .into(holder.binding.imageView)
+            holder.binding.tvCharaName.text = character.name
+        }
+
+
 
         holder.itemView.setOnClickListener {
             listener.onItemClick(character)
