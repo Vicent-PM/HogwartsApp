@@ -37,6 +37,7 @@ class CharacterDetailsFragment: Fragment() {
 
         myViewModel.selectedCharacter.observe(viewLifecycleOwner) {
             binding.tvName.text = it.name
+
             if(it.hogwartsStudent == true) {
                 (requireActivity() as MainActivity).supportActionBar?.title = "Student"
             } else if (it.hogwartsStaff == true) {
@@ -58,25 +59,25 @@ class CharacterDetailsFragment: Fragment() {
             binding.tvWizard.text = it.wizard.toString()
             binding.tvAncestry.text = it.ancestry
             binding.tvEyeColour.text = it.eyeColour
-//            binding.tvHairColour.text = it.hairColour
-//            binding.tvWand.text = it.wand?.core + ", " + it.wand?.wood + ", " + it.wand?.length.toString()
-//            binding.tvPatronus.text = it.patronus
-//            if(it.hogwartsStudent == true) {
-//                binding.ivStundent.setImageResource(R.drawable.baseline_check_24)
-//            } else {
-//                binding.ivStundent.setImageResource(R.drawable.baseline_clear_24)
-//            }
-//            if(it.hogwartsStaff == true) {
-//                binding.ivStaff.setImageResource(R.drawable.baseline_check_24)
-//            } else {
-//                binding.ivStaff.setImageResource(R.drawable.baseline_clear_24)
-//            }
-//            binding.tvActor.text = it.actor
-//            if(it.alive == true) {
-//                binding.ivAlive.setImageResource(R.drawable.baseline_check_24)
-//            } else {
-//                binding.ivAlive.setImageResource(R.drawable.baseline_clear_24)
-//            }
+            binding.tvHairColour.text = it.hairColour
+            binding.tvWand.text = it.wand?.core + ", " + it.wand?.wood + ", " + it.wand?.length.toString()
+            binding.tvPatronus.text = it.patronus
+            if(it.hogwartsStudent == true) {
+                binding.ivStundent.setImageResource(R.drawable.baseline_check_24)
+            } else {
+                binding.ivStundent.setImageResource(R.drawable.baseline_clear_24)
+            }
+            if(it.hogwartsStaff == true) {
+                binding.ivStaff.setImageResource(R.drawable.baseline_check_24)
+            } else {
+                binding.ivStaff.setImageResource(R.drawable.baseline_clear_24)
+            }
+            binding.tvActor.text = it.actor
+            if(it.alive == true) {
+                binding.ivAlive.setImageResource(R.drawable.baseline_check_24)
+            } else {
+                binding.ivAlive.setImageResource(R.drawable.baseline_clear_24)
+            }
         }
     }
 
