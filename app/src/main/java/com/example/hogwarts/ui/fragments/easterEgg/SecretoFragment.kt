@@ -7,9 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.example.hogwarts.R
 
 class SecretoFragment : Fragment() {
+
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,14 +26,12 @@ class SecretoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        navController = Navigation.findNavController(view)
+
         val btnEmpezar = view.findViewById<Button>(R.id.btnEmpezar)
         btnEmpezar.setOnClickListener {
-            val pregunta1Fragment = Pregunta1Fragment()
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, pregunta1Fragment)
-                .addToBackStack(null)
-                .commit()
+            navController.navigate(R.id.pregunta1Fragment)
         }
     }
-
 }
+
