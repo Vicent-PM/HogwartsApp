@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -19,7 +20,7 @@ class ResultadoFragment : Fragment() {
     private var _binding: ResultadohouseBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
-
+    private var onResultadoListener: OnResultadoListener? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,9 +32,20 @@ class ResultadoFragment : Fragment() {
         return view
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is OnResultadoListener) {
+            onResultadoListener = context
+        } else {
+            throw RuntimeException("$context must implement OnResultadoListener")
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = findNavController()
+
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "RESULTADO FINAL"
 
         val imageViewCasa = view.findViewById<ImageView>(R.id.imageViewCasa)
         val textViewResultado = view.findViewById<TextView>(R.id.textViewResultado)
@@ -44,28 +56,42 @@ class ResultadoFragment : Fragment() {
         textViewResultado.text = resultadoCasa
 
         when (resultadoCasa) {
-            "Gryffindor" -> imageViewCasa.setImageResource(R.drawable.casa2)
-            "Slytherin" -> imageViewCasa.setImageResource(R.drawable.casa3)
-            "Hufflepuff" -> imageViewCasa.setImageResource(R.drawable.casa1)
-            "Ravenclaw" -> imageViewCasa.setImageResource(R.drawable.casa4)
+            "Gryffindor" -> {
+                imageViewCasa.setImageResource(R.drawable.casa2)
+                textViewResultado.text = "Enhorabuena, perteneces a GRYFFINDOR"
+            }
+            "Slytherin" -> {
+                imageViewCasa.setImageResource(R.drawable.casa3)
+                textViewResultado.text = "Enhorabuena, perteneces a SLYTHERIN"
+            }
+            "Hufflepuff" -> {
+                imageViewCasa.setImageResource(R.drawable.casa1)
+                textViewResultado.text = "Enhorabuena, perteneces a HUFFLEPUFF"
+            }
+            "Ravenclaw" -> {
+                imageViewCasa.setImageResource(R.drawable.casa4)
+                textViewResultado.text = "Enhorabuena, perteneces a RAVENCLAW"
+            }
         }
 
-        // Configurar el botón para volver al inicio
+        onResultadoListener?.onResultadoCasaSeleccionada(resultadoCasa)
+
         btnVolverInicio.setOnClickListener {
             navController.navigate(R.id.action_resultadoFragment_to_FirstFragment)
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
-
     private fun obtenerResultadoCasa(): String {
         val casas = listOf("Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw")
         return casas.random()
     }
 
+    interface OnResultadoListener {
+        fun onResultadoCasaSeleccionada(resultadoCasa: String)
+    }
 }

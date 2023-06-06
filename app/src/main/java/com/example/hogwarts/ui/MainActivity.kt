@@ -22,15 +22,17 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.hogwarts.R
 import com.example.hogwarts.databinding.ActivityMainBinding
 import com.example.hogwarts.databinding.FragmentFirstBinding
+import com.example.hogwarts.ui.fragments.easterEgg.ResultadoFragment
 import com.google.android.material.navigation.NavigationView
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ResultadoFragment.OnResultadoListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var headerTextView: TextView
+    private lateinit var headercasaTextView: TextView
     private lateinit var headerImage: ImageView
     private var contador = 0
 
@@ -68,7 +70,9 @@ class MainActivity : AppCompatActivity() {
 
         val navigationView: NavigationView = findViewById(R.id.navigationview)
         val headerView = navigationView.getHeaderView(0)
+        val headercasaView = navigationView.getHeaderView(0)
         headerTextView = headerView.findViewById(R.id.usuario_header)
+        headercasaTextView = headercasaView.findViewById(R.id.casa_header)
         headerImage = headerView.findViewById(R.id.image_galeria)
 
         headerTextView.text = "Half-Blood"
@@ -84,6 +88,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -91,6 +96,7 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
@@ -115,6 +121,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onResultadoCasaSeleccionada(resultadoCasa: String) {
+        // Aquí puedes actualizar el textView de la casa con el resultadoCasa
+        headercasaTextView.text = resultadoCasa
     }
 
 

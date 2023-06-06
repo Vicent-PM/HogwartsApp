@@ -38,4 +38,21 @@
         app:layout_constraintStart_toEndOf="@+id/image_galeria"
         app:layout_constraintTop_toTopOf="@+id/image_galeria" />
 
+    <TextView
+        android:id="@+id/casa_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/harryfont"
+        android:shadowColor="#000000"
+        android:shadowDx="0"
+        android:shadowRadius="8"
+        android:text="Sin casa"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_galeria"
+        app:layout_constraintTop_toBottomOf="@+id/usuario_header" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

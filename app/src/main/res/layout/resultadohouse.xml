@@ -36,6 +36,11 @@
         android:layout_height="wrap_content"
         android:text="Volver"
         android:textSize="18sp"
+        android:backgroundTint="#8108090B"
+        android:textStyle="bold"
+        android:textColor="#CAAFAF"
+        app:strokeColor="#242730"
+        app:strokeWidth="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

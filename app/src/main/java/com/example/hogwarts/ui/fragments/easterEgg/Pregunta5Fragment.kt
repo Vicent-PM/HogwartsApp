@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -31,11 +32,14 @@ class Pregunta5Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = findNavController()
 
-        binding.textViewPregunta.text = "¿Qué animal te representa mejor?"
-        binding.radioButtonRespuesta1.text = "León"
-        binding.radioButtonRespuesta2.text = "Serpiente"
-        binding.radioButtonRespuesta3.text = "Tejón"
-        binding.radioButtonRespuesta4.text = "Águila"
+
+        (requireActivity() as AppCompatActivity).supportActionBar?.setTitle("Pregunta 5")
+
+        binding.textViewPregunta.text = "¿Cuál de estos objetos mágicos te gustaría tener?"
+        binding.radioButtonRespuesta1.text = "La Capa de Invisibilidad"
+        binding.radioButtonRespuesta2.text = "La Varita de Saúco"
+        binding.radioButtonRespuesta3.text = "La Piedra de la Resurrección"
+        binding.radioButtonRespuesta4.text = "El Mapa del Merodeador"
 
         binding.btnSiguiente.isEnabled = false
         binding.radioGroupRespuestas.setOnCheckedChangeListener { group, checkedId ->
@@ -45,10 +49,10 @@ class Pregunta5Fragment : Fragment() {
         binding.btnSiguiente.setOnClickListener {
             val selectedAnswer = binding.radioGroupRespuestas.checkedRadioButtonId
             val answer = when (selectedAnswer) {
-                R.id.radioButtonRespuesta1 -> "León"
-                R.id.radioButtonRespuesta2 -> "Serpiente"
-                R.id.radioButtonRespuesta3 -> "Tejón"
-                R.id.radioButtonRespuesta4 -> "Águila"
+                R.id.radioButtonRespuesta1 -> "La Capa de Invisibilidad"
+                R.id.radioButtonRespuesta2 -> "La Varita de Saúco"
+                R.id.radioButtonRespuesta3 -> "La Piedra de la Resurrección"
+                R.id.radioButtonRespuesta4 -> "El Mapa del Merodeador"
                 else -> ""
             }
 
@@ -65,7 +69,6 @@ class Pregunta5Fragment : Fragment() {
         }
 
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
